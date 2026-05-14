@@ -25,7 +25,7 @@ The model was evaluated on a balanced test set of 1,300 images (650 COVID / 650 
 ### Key Metrics
 | Metric | Value |
 | :--- | :--- |
-| **Test Accuracy** | **98.08%** |
+| **Test Accuracy** | **98.77%** |
 | **ROC AUC** | **0.9993** |
 | **Precision (COVID)** | **96.30%** |
 | **Recall / Sensitivity** | **100.00%** |
