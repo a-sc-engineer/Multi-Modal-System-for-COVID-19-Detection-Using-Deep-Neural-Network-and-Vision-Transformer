@@ -41,7 +41,8 @@ logs/
 Dockerfile
 .dockerignore
 
-# Frontend & dependencies (not deploying yet)
+# Frontend, dependencies & Flask app (not deploying yet)
 static/
 templates/
 requirements.txt
+app.py
