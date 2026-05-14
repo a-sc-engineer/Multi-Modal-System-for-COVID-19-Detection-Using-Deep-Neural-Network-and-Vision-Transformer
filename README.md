@@ -5,6 +5,7 @@ A sophisticated deep learning system that utilizes a **Hierarchical Multimodal F
 ## 🚀 Key Features
 
 - **Dual-Modality Analysis**: Processes both CT and X-ray data for more robust diagnostics.
+- **Gaussian Noise Regularization**: Implements custom Gaussian Noise layers with a **standard deviation of 0.02** to improve model generalization and prevent overfitting on medical imaging artifacts.
 - **Hybrid Architecture**: Combines the local feature extraction of CNNs with the global context of Vision Transformers (ViT).
 - **Hierarchical Fusion**: Uses Cross-Modality Attention to intelligently weight and fuse features from different branches.
 - **High Performance**: Achieves state-of-the-art results on medical imaging datasets.
@@ -12,7 +13,8 @@ A sophisticated deep learning system that utilizes a **Hierarchical Multimodal F
 ## 🏗️ Model Architecture
 
 The system uses a complex hierarchical structure:
-1.  **CNN Branch**: Extracts spatial hierarchical features using custom convolutional blocks.
+1.  **Noise Augmentation**: A critical custom **Gaussian Noise layer (σ=0.02)** is applied during training to ensure the model remains robust against sensor noise and imaging variations.
+2.  **CNN Branch**: Extracts spatial hierarchical features using custom convolutional blocks.
 2.  **ViT Branch**: Utilizes pre-trained Vision Transformers (Google ViT-Base) to capture global dependencies.
 3.  **Attention Fusion**: Features are fused using a cross-modality attention mechanism that allows the model to focus on the most relevant features across both CT and X-ray inputs.
 
