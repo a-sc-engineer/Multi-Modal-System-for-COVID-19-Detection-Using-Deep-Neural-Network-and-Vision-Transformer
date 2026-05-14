@@ -15,8 +15,8 @@ A sophisticated deep learning system that utilizes a **Hierarchical Multimodal F
 The system uses a complex hierarchical structure:
 1.  **Noise Augmentation**: A critical custom **Gaussian Noise layer (σ=0.02)** is applied during training to ensure the model remains robust against sensor noise and imaging variations.
 2.  **CNN Branch**: Extracts spatial hierarchical features using custom convolutional blocks.
-2.  **ViT Branch**: Utilizes pre-trained Vision Transformers (Google ViT-Base) to capture global dependencies.
-3.  **Attention Fusion**: Features are fused using a cross-modality attention mechanism that allows the model to focus on the most relevant features across both CT and X-ray inputs.
+3.  **ViT Branch**: Utilizes pre-trained **Google ViT-Base (google/vit-base-patch16-224)** to capture global context and long-range dependencies in medical images.
+4.  **Attention Fusion**: Features are fused using a cross-modality attention mechanism that allows the model to focus on the most relevant features across both CT and X-ray inputs.
 
 ## 📊 Performance Results
 
