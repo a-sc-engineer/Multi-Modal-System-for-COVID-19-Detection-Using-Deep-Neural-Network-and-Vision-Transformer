@@ -1,8 +1,0 @@
-Flask
-Werkzeug
-tensorflow
-transformers==4.44.2
-tf-keras
-Pillow
-numpy
-gunicorn
