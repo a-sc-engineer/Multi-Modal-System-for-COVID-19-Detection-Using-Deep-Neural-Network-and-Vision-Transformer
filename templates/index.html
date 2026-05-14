@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Multimodal Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>COVID-19 Detection</h1>
+            <p>Multimodal AI Analysis using CT Scan and X-Ray Fusion</p>
+        </header>
+
+        <main class="glass-panel">
+            <form id="upload-form">
+                <div class="upload-grid">
+                    <!-- CT Scan Upload -->
+                    <div class="upload-box" id="ct-dropzone">
+                        <h3>CT Scan</h3>
+                        <div class="drop-area">
+                            <input type="file" id="ct-input" name="ct_image" accept="image/*" required>
+                            <label for="ct-input" class="upload-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                <span>Choose or drop CT Scan image</span>
+                            </label>
+                            <img id="ct-preview" class="preview-img" src="" alt="CT Preview">
+                        </div>
+                    </div>
+
+                    <!-- X-Ray Upload -->
+                    <div class="upload-box" id="xray-dropzone">
+                        <h3>X-Ray</h3>
+                        <div class="drop-area">
+                            <input type="file" id="xray-input" name="xray_image" accept="image/*" required>
+                            <label for="xray-input" class="upload-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                <span>Choose or drop X-Ray image</span>
+                            </label>
+                            <img id="xray-preview" class="preview-img" src="" alt="X-Ray Preview">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <button type="submit" id="analyze-btn" class="primary-btn">
+                        <span>Analyze Images</span>
+                        <div class="loader hidden" id="btn-loader"></div>
+                    </button>
+                </div>
+            </form>
+
+            <div id="results-container" class="results-panel hidden">
+                <h2>Analysis Results</h2>
+                <div class="result-card">
+                    <div class="prediction-row">
+                        <span class="label">Prediction:</span>
+                        <span id="prediction-result" class="value badge">--</span>
+                    </div>
+                    <div class="confidence-row">
+                        <div class="confidence-header">
+                            <span class="label">Confidence</span>
+                            <span id="confidence-value" class="value">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="confidence-fill" class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="details" id="probability-details">
+                        <!-- Probabilities will be injected here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="error-container" class="error-panel hidden">
+                <p id="error-message"></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
