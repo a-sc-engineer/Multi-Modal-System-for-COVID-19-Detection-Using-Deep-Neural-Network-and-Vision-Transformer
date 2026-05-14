@@ -40,3 +40,8 @@ logs/
 # Docker (not deploying yet)
 Dockerfile
 .dockerignore
+
+# Frontend & dependencies (not deploying yet)
+static/
+templates/
+requirements.txt
