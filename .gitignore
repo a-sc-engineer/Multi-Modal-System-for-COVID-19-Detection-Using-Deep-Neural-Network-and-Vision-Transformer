@@ -36,3 +36,7 @@ logs/
 
 # Model files (tracked via Git LFS instead)
 # *.keras
+
+# Docker (not deploying yet)
+Dockerfile
+.dockerignore
